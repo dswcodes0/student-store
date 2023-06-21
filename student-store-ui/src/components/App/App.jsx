@@ -11,8 +11,8 @@ export default function App() {
       <BrowserRouter>
         <main>
           {/* YOUR CODE HERE! */}
-          <Navbar />
-          <Sidebar />
+          {/* <Navbar />
+          <Sidebar /> */}
           <Home />
         </main>
       </BrowserRouter>
