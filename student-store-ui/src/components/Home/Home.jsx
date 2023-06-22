@@ -20,9 +20,33 @@ export default function Home() {
 
   },[])
 
+  
+  
+    const filteredCategories = [...new Set(
+        products.map( (product) => (
+          product.category
+      ))
+    )]
 
+  
   return (
+
+    
+
     <div className="home">
+      {/* 
+      x get the category names
+      create buttons
+      on button click, hide the button categories
+      
+      */}
+
+      {filteredCategories.map( (categoryName) =>(
+        <div>{categoryName}<br/></div>
+        //turn div into button 
+        
+      ))}
+      
       <div id="buy" className="product-grid">
         <div className="content">
           <h3>Best Selling Products</h3>
