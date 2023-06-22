@@ -6,6 +6,7 @@ import "./Home.css"
 export default function Home() {
 
   const [products, setProducts] = useState([])
+  const [selectedCategory, setSelectedCategory] = useState(null)
 
   useEffect(() => {
     async function fetchProducts(){
@@ -46,11 +47,12 @@ export default function Home() {
         <i className="material-icons">menu</i>
       <ul>
         <li>
-          <button>All Categories</button>
+          <button onClick={() => setSelectedCategory(null)} >All Categories</button>
+          
         </li>
       {filteredCategories.map( (categoryName) =>(
         <li key={categoryName}>
-          <button>{categoryName.charAt(0).toUpperCase()}{categoryName.slice(1)}<br/></button>
+          <button onClick={() => setSelectedCategory(categoryName)}>{categoryName.charAt(0).toUpperCase()}{categoryName.slice(1)}<br/></button>
         </li>        
       ))}
       </ul>
@@ -60,7 +62,9 @@ export default function Home() {
         <div className="content">
           <h3>Best Selling Products</h3>
           <div className="grid">
-            {products.map( (product) =>(
+            {products
+            .filter((product) => selectedCategory === null || product.category === selectedCategory)
+            .map( (product) =>(
               <div key={product.id} className="product-card">
                 <h4>{product.name}</h4>
                 <p>{product.description}</p>
