@@ -7,13 +7,13 @@ export default function Home() {
 
   const [products, setProducts] = useState([])
   const [selectedCategory, setSelectedCategory] = useState(null)
+  const [inputValue, setInputValue] = useState("")
 
   useEffect(() => {
     async function fetchProducts(){
       try{
         const response = await fetch(`https://codepath-store-api.herokuapp.com/store`)
         const data = await response.json()
-        console.log(data.products)
         setProducts(data.products)
       }catch(error){
         console.log("Error catching prodcuts: ", error)
@@ -32,17 +32,36 @@ export default function Home() {
     )]
 
   
+    const liveSearch = (event) => {
+      const value = event.target.value
+      setInputValue(value)
+      }
+    
+
   return (
 
     
 
     <div className="home">
       {/* 
-      x get the category names
-      create buttons
-      on button click, hide the button categories
-      
+      create the search bar html
+      retrieve the search bar's input field
+      add variables that access all of the products by class
+      compare the search bar input field to the name of the product
+      add the class of is-hidden to all of the products that dont have the search bar input value
+      if the name of the product matches the search bar input field then remove the search  bar input value
       */}
+
+      
+      
+      
+      
+        
+        <div className="sub-navbar">
+          <input type="text" onInput={liveSearch} value={inputValue} className="search-bar" />
+          
+        </div>
+      
       <div className="hamburger-menu">
         <i className="material-icons">menu</i>
       <ul>
@@ -61,9 +80,12 @@ export default function Home() {
       <div id="buy" className="product-grid">
         <div className="content">
           <h3>Best Selling Products</h3>
-          <div className="grid">
+          <div className="product-grid">
             {products
             .filter((product) => selectedCategory === null || product.category === selectedCategory)
+            .filter((product) =>
+            product.name.toLowerCase().includes(inputValue.toLowerCase())
+            )
             .map( (product) =>(
               <div key={product.id} className="product-card">
                 <h4>{product.name}</h4>
