@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css"
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"></link>
 
 export default function Home() {
 
@@ -40,12 +42,19 @@ export default function Home() {
       on button click, hide the button categories
       
       */}
-
+      <div className="hamburger-menu">
+        <i className="material-icons">menu</i>
+      <ul>
+        <li>
+          <button>All Categories</button>
+        </li>
       {filteredCategories.map( (categoryName) =>(
-        <div>{categoryName}<br/></div>
-        //turn div into button 
-        
+        <li key={categoryName}>
+          <button>{categoryName.charAt(0).toUpperCase()}{categoryName.slice(1)}<br/></button>
+        </li>        
       ))}
+      </ul>
+      </div>
       
       <div id="buy" className="product-grid">
         <div className="content">
