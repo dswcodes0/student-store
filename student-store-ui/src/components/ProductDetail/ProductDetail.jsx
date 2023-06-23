@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-
+import "./ProductDetail.css";
 export default function ProductDetail() {
   const { productId } = useParams();
   const [product, setProduct] = React.useState(null);
@@ -25,7 +25,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div>
+    <div className="productDetailDiv">
       <h2>Product Detail</h2>
       <h4>{product.name}</h4>
       <p>{product.description}</p>

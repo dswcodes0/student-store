@@ -6,5 +6,10 @@ export default defineConfig((envConfig) => ({
   server: {
     open: true,
     host: true,
+    fs: {
+      // Allow serving files from these directories
+      allow: ['.', '/node_modules/@fortawesome/fontawesome-free/webfonts'],
+    },
   },
 }))
+

@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 
-
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
+      <Link to="/" className="navbar-logo">
         <img src="/kimetsu-logo.png" alt="Logo" />
-      </div>
+      </Link>
       <div className="navbar-social">
         <a href="https://example.com">
           <i className="fab fa-facebook"></i>

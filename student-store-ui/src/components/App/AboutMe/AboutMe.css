@@ -1,0 +1,34 @@
+.about-me {
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  .about-me-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .about-me-logo {
+    margin-right: 20px;
+  }
+  
+  .about-me-logo img {
+    width: 100px;
+    height: auto;
+  }
+  
+  .about-me-text {
+    color: #333333;
+  }
+  
+  .about-me-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .about-me-text p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  

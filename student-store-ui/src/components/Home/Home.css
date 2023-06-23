@@ -6,7 +6,10 @@
   align-items: center;
   justify-content: flex-start;
   padding-top: 20px;
-  margin-top: 60px; /* Add margin to create space below the navbar */
+  margin-top: 32px; /* Add margin to create space below the navbar */
+}
+.sub-navbar{
+  padding: 32px;
 }
 
 .hamburger-menu {

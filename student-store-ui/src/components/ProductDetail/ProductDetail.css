@@ -1,47 +1,53 @@
-.product-detail {
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #root {
+    height: 100%;
+  }
+  
+  .productDetailContainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    height: 100%;
   }
   
-  .product-image {
-    margin-right: 50px;
+
+.productDetailDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'CoolFont', sans-serif; /* Replace 'CoolFont' with the desired font name */
+    color: #336699;
+    margin: 32px; /* Adjust the color as per your preference */
   }
   
-  .product-image img {
+  h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  img {
     width: 400px;
     height: 400px;
     object-fit: cover;
   }
   
-  .product-info {
-    text-align: center;
-  }
-  
-  .product-info h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .product-info p {
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .product-details {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .price,
-  .rating {
-    margin-right: 20px;
-  }
-  
-  .price span,
-  .rating span {
-    font-size: 18px;
-  }
+  /* Add any additional CSS styles as needed */
   
