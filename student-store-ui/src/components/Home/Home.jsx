@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css"
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"></link>
+
+
 
 export default function Home() {
 
@@ -43,13 +44,7 @@ export default function Home() {
     
 
     <div className="home">
-      {/* 
-      create the search bar html
-      retrieve the search bar's input field
-      add variables that access all of the products by class
-      compare the search bar input field to the name of the product
-      add the class of is-hidden to all of the products that dont have the search bar input value
-      if the name of the product matches the search bar input field then remove the search  bar input value
+      {/* w
       */}
 
       
@@ -87,11 +82,16 @@ export default function Home() {
             product.name.toLowerCase().includes(inputValue.toLowerCase())
             )
             .map( (product) =>(
+              <Link key={product.id} to={{
+                pathname: `/product/${product.id}`,
+                state: { product: product }, // Pass the product data as state
+              }} className="product-link">
               <div key={product.id} className="product-card">
                 <h4>{product.name}</h4>
                 <p>{product.description}</p>
                 <img src={product.image} alt={product.name} />
               </div>
+              </Link>
             ))}
           </div>
         </div>
