@@ -4,7 +4,7 @@ import "./Home.css"
 
 
 
-export default function Home() {
+export default function Home({cartItems, handleDecrement, handleIncrement}) {
 
   const [products, setProducts] = useState([])
   const [selectedCategory, setSelectedCategory] = useState(null)
@@ -82,16 +82,23 @@ export default function Home() {
             product.name.toLowerCase().includes(inputValue.toLowerCase())
             )
             .map( (product) =>(
-              <Link key={product.id} to={{
-                pathname: `/product/${product.id}`,
-                state: { product: product }, // Pass the product data as state
-              }} className="product-link">
+              
               <div key={product.id} className="product-card">
                 <h4>{product.name}</h4>
                 <p>{product.description}</p>
-                <img src={product.image} alt={product.name} />
+                <Link key={product.id} to={{
+                  pathname: `/product/${product.id}`,
+                  state: { product: product }, // Pass the product data as state
+                 }} className="product-link">
+                  <img src={product.image} alt={product.name} />
+                </Link>
+                <div className="icons">
+                <button onClick={() => handleIncrement(product)}><i className="fa-solid fa-plus icon "></i></button>
+                <button onClick={() => handleDecrement(product)}><i className="fa-solid fa-minus icon"></i></button>
+                
+                
+                </div>
               </div>
-              </Link>
             ))}
           </div>
         </div>

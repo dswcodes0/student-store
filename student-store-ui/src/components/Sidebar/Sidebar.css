@@ -1,0 +1,85 @@
+.sidebar-page {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sidebar-page.expanded {
+    width: 300px;
+
+}
+
+.hidden{
+    display: none;
+}
+
+h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+.menu i{
+    font-size: 20px;
+}
+
+.cart{
+
+    
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+}
+
+.cart-info{
+    margin: 12px;
+    width: 100%;
+
+}
+
+.cart-total{
+    margin: 12px;
+    width: 100%;
+}
+
+.payment-info {
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    max-width: 100%;
+    width: 100%;
+
+    overflow: hidden;
+    }
+  
+  .user-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 100%;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+  
+  .input-group input {
+    width: 100%;
+  }
+  
+  .terms-group {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .terms-group label {
+    margin-left: 6px;
+  }
+  

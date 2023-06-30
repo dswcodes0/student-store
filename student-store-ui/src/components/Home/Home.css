@@ -18,6 +18,15 @@
   margin-bottom: 20px; /* Add some bottom margin for spacing */
 }
 
+.icons{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icon{
+  padding: 12px;
+}
+
 .material-icons {
   font-size: 24px;
 }
